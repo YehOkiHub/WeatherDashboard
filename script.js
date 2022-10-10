@@ -30,32 +30,59 @@ searchBtn.addEventListener("click", function (event){
                 .then((response) => response.json())
                 .then((result) => {
                     console.log(result);
-                    let fahrentemp = (result.list[0].main.temp -273.15) * 9/5 +32
+                    let fahrentemp = (Math.round(result.list[0].main.temp -273.15) * 9/5 +32)
                     $("#current-temp").text(fahrentemp);
                     $("#current-wind").text(result.list[0].wind.gust + " MPH");
                     $("#current-humidity").text(result.list[0].main.humidity + "%");
                     $("#citymain").text(result.city.name);
-                    $( ".hide" ).css("display", "block")
+                    $(".hide").css("display", "block")
 
-                    for(i = 7; i < result.list[11]; i++) {
+// 5day forecast
 
-                        for(x = 1; x < 5; i++ ){
+                    let day1 = (Math.round(result.list[6].main.temp - 273) * 9/5 + 32) + "°F " +  result.list[6].wind.gust + " MPH " + "Humidity " + result.list[6].main.humidity + "%"
+                    let day2 = (Math.round(result.list[14].main.temp - 273)  * 9/5 + 32) + "°F " + result.list[14].wind.gust + " MPH " + "Humidity " + result.list[14].main.humidity + "%"
+                    let day3 = (Math.round(result.list[22].main.temp - 273)  * 9/5 + 32) + "°F " + result.list[22].wind.gust + " MPH " + "Humidity " + result.list[22].main.humidity + "%"
+                    let day4 = (Math.round(result.list[30].main.temp - 273)  * 9/5 + 32) + "°F " + result.list[30].wind.gust + " MPH " + "Humidity " + result.list[30].main.humidity + "%"
+                    let day5 = (Math.round(result.list[38].main.temp - 273)  * 9/5 + 32) + "°F " + result.list[38].wind.gust + " MPH " + "Humidity " + result.list[38].main.humidity + "%"
+                    $("#1fore").text(day1)
+                    $("#2fore").text(day2)
+                    $("#3fore").text(day3)
+                    $("#4fore").text(day4)
+                    $("#5fore").text(day5)
+                    $("#5daycity").text(result.city.name +"'s 5 day Forecast")
 
-                            [x]fore.text(result.list[i])
 
 
-                        }
-
-
-                    }
+                    
 
 
 
-                    // $("#1fore").text(result.list[7].wind.gust + " MPH");
-                    // $("#2fore").text(result.list[8].wind.gust + " MPH");
-                    // $("#3fore").text(result.list[9].wind.gust + " MPH");
-                    // $("#4fore").text(result.list[10].wind.gust + " MPH");
-                    // $("#5fore").text(result.list[11].wind.gust + " MPH");
+                    
+                    
+
+
+
+
+
+                    
+                    // $("#1fore").text(result.list[6].wind.gust + " MPH");
+                    // $("#2fore").text(result.list[14].wind.gust + " MPH");
+                    // $("#3fore").text(result.list[22].wind.gust + " MPH");
+                    // $("#4fore").text(result.list[30].wind.gust + " MPH");
+                    // $("#5fore").text(result.list[38].wind.gust + " MPH");
+                    // $(".11fore").text(result.list[6].main.humidity + "%");
+                    // $("#22fore").text(result.list[14].main.humidity + "%");
+                    // $("#33fore").text(result.list[22].main.humidity + "%");
+                    // $("#44fore").text(result.list[30].main.humidity + "%");
+                    // $("#55fore").text(result.list[38].main.humidity + "%");
+
+                    
+
+
+
+
+
+
                     
                 })
                 .catch((error) => console.log("error", error));
@@ -95,5 +122,17 @@ searchBtn.addEventListener("click", function (event){
 //         console.log(error);
 //     });
     
+// }
+
+// for(i = 7; i < result.list[11]; i++) {
+
+//     for(x = 1; x < 5; i++ ){
+
+//     l [x]fore.text(result.list[i])
+
+
+//     }
+
+
 // }
 
