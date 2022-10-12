@@ -1,260 +1,211 @@
 * {
- margin: 0px;
- padding: 0px;
- box-sizing: border-box;
-
-
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-
 #header {
-
-  background: rgba(3, 31, 100, 1.0);
-  background: -webkit-linear-gradient(top left, rgba(3, 31, 100, 1.0), #152238);
-  background: -moz-linear-gradient(top left, rgba(3, 31, 100, 1.0), rgba(158, 164, 239, 1.0));
-  background: linear-gradient(to bottom right, rgba(3, 31, 100, 1.0), #152238);
+  background: rgba(3, 31, 100, 1);
+  background: -webkit-linear-gradient(top left, rgba(3, 31, 100, 1), #152238);
+  background: -moz-linear-gradient(
+    top left,
+    rgba(3, 31, 100, 1),
+    rgba(158, 164, 239, 1)
+  );
+  background: linear-gradient(to bottom right, rgba(3, 31, 100, 1), #152238);
   color: white;
-  text-align: center;  
+  text-align: center;
   font-size: 5vh;
-  margin-right:20vh;
- 
-
+  margin-right: 20vh;
 }
 
 label {
-    display: block;
-    font: 1rem 'Fira Sans', sans-serif;
-    
+  display: block;
+  font: 1rem "Fira Sans", sans-serif;
 }
 
 input,
 label {
-    margin: .4rem 0;
-    margin-left: 2vh;
+  margin: 0.4rem 0;
+  margin-left: 2vh;
 }
 
 #mainprofile {
-
-    width: 40vh;
-    height: 20vh;
-    position: fixed;    
-    top: 24%;
-    left: 35%;
-    text-align: left;
-    border: solid black 5px;
-    background-color: #152238;
-    color: white;
-    border-radius: 10px;
-    text-align: center;
-    border: 4px double #cccccc;
-    
-    
+  width: 40vh;
+  height: 20vh;
+  position: fixed;
+  top: 24%;
+  left: 35%;
+  text-align: left;
+  border: solid black 5px;
+  background-color: #152238;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  border: 4px double #cccccc;
 }
 
 .col {
-    display: inline-block;
-    width: 30%;
-    vertical-align: top;
-    
-    
-  }
-
+  display: inline-block;
+  width: 30%;
+  vertical-align: top;
+}
 
 .hide {
-
-    display: none;
-
-
+  display: none;
 }
 
 .grid-container {
-    
-    display: grid;
-    height: 40vh;
-    width: 100vh;
-    align-content: center;
-    grid-template-columns: 200px 200px 200px;
-    gap: 30px;    
-    padding: 20vh;
-    border: whitesmoke solid 5px;
-    margin-left: 20.3%;     
-    background-color: #152238;
-    color: white;
-    border-radius: 10px;
-    border: 4px double #cccccc;
-    
-  }
+  display: grid;
+  height: 40vh;
+  width: 100vh;
+  align-content: center;
+  grid-template-columns: 200px 200px 200px;
+  gap: 30px;
+  padding: 20vh;
+  border: whitesmoke solid 5px;
+  margin-left: 20.3%;
+  background-color: #152238;
+  color: white;
+  border-radius: 10px;
+  border: 4px double #cccccc;
+}
 
-  .grid-container > div {
-    background-color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    padding: 10px;
-    font-size: 25px;
-    height: 18vh;
-    width: 15vh;
-    border: black solid 5px;
-    align-content: center;
-    display: inline-block;
-    
-  }
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 10px;
+  font-size: 25px;
+  height: 18vh;
+  width: 15vh;
+  border: black solid 5px;
+  align-content: center;
+  display: inline-block;
+}
 #button-submit {
-
-    display: inline-block;
-    background-color:#152238;
-    border-radius: 10px;
-    border: 4px double #cccccc;
-    color: #eeeeee;
-    text-align: center;
-    font-size: 28px;
-    padding: 10px;
-    width: 150px;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin-top: 10vh;
-        
+  display: inline-block;
+  background-color: #152238;
+  border-radius: 10px;
+  border: 4px double #cccccc;
+  color: #eeeeee;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  width: 150px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-top: 10vh;
 }
 
 #search {
-
-    border: 1px solid grey;
-    border-radius: 5px;
-    height: 40px;
-    width: 10%;
-    padding: 2px 23px 2px 30px;
-    outline: 0;
-    background-color: #f5f5f5;
-    font-size: 20px;
-
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 40px;
+  width: 10%;
+  padding: 2px 23px 2px 30px;
+  outline: 0;
+  background-color: #f5f5f5;
+  font-size: 20px;
 }
-
 
 #searchhistory {
-
-    font-size: 20px;
-    font-weight: bold;    
-    width: 2%;    
-    margin-left: 2vh;    
-    background-color:#152238;
-    border-radius: 10px;
-    border: 4px double #cccccc;
-    color: #eeeeee;
-    text-align: center;
-    font-size: 28px;
-    padding: 10px;
-    width:30vh;    
-    cursor: pointer;
-    margin-top: 2vh;
-    
-    
-    
-
+  font-size: 20px;
+  font-weight: bold;
+  width: 2%;
+  margin-left: 2vh;
+  background-color: #152238;
+  border-radius: 10px;
+  border: 4px double #cccccc;
+  color: #eeeeee;
+  text-align: center;
+  font-size: 28px;
+  padding: 10px;
+  width: 30vh;
+  cursor: pointer;
+  margin-top: 2vh;
 }
 
-
-#history1 { 
-
-    
-    background-color:#152238;
-    border-radius: 10px;
-    border: 4px double #cccccc;
-    color: #eeeeee;
-    text-align: center;
-    font-size:14px;
-    padding: 10px;
-    width: 150px;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin-left: 6vh;
-    
-
-
+#history1 {
+  background-color: #152238;
+  border-radius: 10px;
+  border: 4px double #cccccc;
+  color: #eeeeee;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  width: 150px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: 6vh;
 }
 
-#history2 { 
-
-    
-    background-color:#152238;
-    border-radius: 10px;
-    border: 4px double #cccccc;
-    color: #eeeeee;
-    text-align: center;
-    font-size:14px;
-    padding: 10px;
-    width: 150px;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin-left: 6vh;
-
-
+#history2 {
+  background-color: #152238;
+  border-radius: 10px;
+  border: 4px double #cccccc;
+  color: #eeeeee;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  width: 150px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: 6vh;
 }
-#history3 { 
-
-    
-    background-color:#152238;
-    border-radius: 10px;
-    border: 4px double #cccccc;
-    color: #eeeeee;
-    text-align: center;
-    font-size:14px;
-    padding: 10px;
-    width: 150px;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin-left: 6vh;
-
-
+#history3 {
+  background-color: #152238;
+  border-radius: 10px;
+  border: 4px double #cccccc;
+  color: #eeeeee;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  width: 150px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: 6vh;
 }
-#history4 { 
-
-    
-    background-color:#152238;
-    border-radius: 10px;
-    border: 4px double #cccccc;
-    color: #eeeeee;
-    text-align: center;
-    font-size:14px;
-    padding: 10px;
-    width: 150px;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin-left: 6vh;
-
-
+#history4 {
+  background-color: #152238;
+  border-radius: 10px;
+  border: 4px double #cccccc;
+  color: #eeeeee;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  width: 150px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: 6vh;
 }
-#history5 { 
-
-    
-    background-color:#152238;
-    border-radius: 10px;
-    border: 4px double #cccccc;
-    color: #eeeeee;
-    text-align: center;
-    font-size:14px;
-    padding: 10px;
-    width: 150px;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin-left: 6vh;
-    
-
-
+#history5 {
+  background-color: #152238;
+  border-radius: 10px;
+  border: 4px double #cccccc;
+  color: #eeeeee;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  width: 150px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: 6vh;
 }
-

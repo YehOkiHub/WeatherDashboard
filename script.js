@@ -7,83 +7,125 @@ var history3 = document.getElementById("history1");
 var history4 = document.getElementById("history1");
 var history5 = document.getElementById("history1");
 
+searchBtn.addEventListener("click", function (event) {
+  event.preventDefault();
+  let city = userInput.value;
 
+  let cities = [city];
+  if (localStorage.getItem("cities")) {
+    cities = JSON.parse(localStorage.getItem("cities"));
+    cities.push(city);
+  }
+  localStorage.setItem("cities", JSON.stringify(cities));
 
-searchBtn.addEventListener("click", function (event){
-    event.preventDefault();
-    let city = userInput.value;
+  fetch(
+    `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`,
 
-    let cities = [city];
-    if (localStorage.getItem("cities")) {
-        cities = JSON.parse(localStorage.getItem("cities"));
-        cities.push(city);
-    }
-    localStorage.setItem("cities", JSON.stringify(cities));
- 
-    
+    { method: "GET" }
+  )
+    .then((response) => response.json())
+    .then((result) => {
+      const lat = result[0].lat;
+      const lon = result[0].lon;
 
-    fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`,
-
-        { method: "GET" }
-    )
+      const url = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+      fetch(url, { method: "GET" })
         .then((response) => response.json())
         .then((result) => {
+          console.log(result);
+          let fahrentemp =
+            result.list[0].dt_txt +
+            ((Math.round(result.list[0].main.temp - 273.15) * 9) / 5 + 32);
+          $("#current-temp").text(fahrentemp);
+          $("#current-wind").text(result.list[0].wind.gust + " MPH");
+          $("#current-humidity").text(result.list[0].main.humidity + "%");
+          $("#citymain").text(result.city.name);
+          $(".hide").css("display", "block");
 
-            const lat = result[0].lat;
-            const lon = result[0].lon;
+          // 5day forecast
 
-            const url = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
-            fetch(url, { method: "GET" })
-                .then((response) => response.json())
-                .then((result) => {
-                    console.log(result);
-                    let fahrentemp =result.list[0].dt_txt + (Math.round(result.list[0].main.temp -273.15) * 9/5 +32)
-                    $("#current-temp").text(fahrentemp);
-                    $("#current-wind").text(result.list[0].wind.gust + " MPH");
-                    $("#current-humidity").text(result.list[0].main.humidity + "%");
-                    $("#citymain").text(result.city.name);
-                    $(".hide").css("display", "block")
-
-// 5day forecast
-
-                    let day1 = result.list[6].dt_txt + " " + (Math.round(result.list[6].main.temp - 273) * 9/5 + 32) + "°F " + " " + result.list[6].wind.gust + " MPH " + "Humidity " + result.list[6].main.humidity + "%"
-                    let day2 = result.list[14].dt_txt +  " " + (Math.round(result.list[14].main.temp - 273)  * 9/5 + 32) + "°F " + " " + result.list[14].wind.gust + " MPH " + "Humidity " + result.list[14].main.humidity + "%"
-                    let day3 = result.list[22].dt_txt +  " " + (Math.round(result.list[22].main.temp - 273)  * 9/5 + 32) + "°F " + " " + result.list[22].wind.gust + " MPH " + "Humidity " + result.list[22].main.humidity + "%"
-                    let day4 = result.list[30].dt_txt +  " " +  (Math.round(result.list[30].main.temp - 273)  * 9/5 + 32) + "°F " + " " + result.list[30].wind.gust + " MPH " + "Humidity " + result.list[30].main.humidity + "%"
-                    let day5 = result.list[38].dt_txt +  " " + (Math.round(result.list[38].main.temp - 273)  * 9/5 + 32) + "°F " + " " + result.list[38].wind.gust + " MPH " + "Humidity " + result.list[38].main.humidity + "%"
-                    $("#1fore").text(day1)
-                    $("#2fore").text(day2)
-                    $("#3fore").text(day3)
-                    $("#4fore").text(day4)
-                    $("#5fore").text(day5)
-                    $("#5daycity").text(result.city.name +"'s 5 day Forecast")
-
-
-
-// 5 Previous searches
-
-                    $("#history1").text(cities[1]); 
-                    $("#history2").text(cities[2]);
-                    $("#history3").text(cities[3]); 
-                    $("#history4").text(cities[4]); 
-                    $("#history5").text(cities[5]);   
-                    
-                    
-                    
-                })
-                .catch((error) => console.log("error", error));
-        })
-
-
-
-        
+          let day1 =
+            result.list[6].dt_txt +
+            " " +
+            ((Math.round(result.list[6].main.temp - 273) * 9) / 5 + 32) +
+            "°F " +
+            " " +
+            result.list[6].wind.gust +
+            " MPH " +
+            "Humidity " +
+            result.list[6].main.humidity +
+            "%";
+          let day2 =
+            result.list[14].dt_txt +
+            " " +
+            ((Math.round(result.list[14].main.temp - 273) * 9) / 5 + 32) +
+            "°F " +
+            " " +
+            result.list[14].wind.gust +
+            " MPH " +
+            "Humidity " +
+            result.list[14].main.humidity +
+            "%";
+          let day3 =
+            result.list[22].dt_txt +
+            " " +
+            ((Math.round(result.list[22].main.temp - 273) * 9) / 5 + 32) +
+            "°F " +
+            " " +
+            result.list[22].wind.gust +
+            " MPH " +
+            "Humidity " +
+            result.list[22].main.humidity +
+            "%";
+          let day4 =
+            result.list[30].dt_txt +
+            " " +
+            ((Math.round(result.list[30].main.temp - 273) * 9) / 5 + 32) +
+            "°F " +
+            " " +
+            result.list[30].wind.gust +
+            " MPH " +
+            "Humidity " +
+            result.list[30].main.humidity +
+            "%";
+          let day5 =
+            result.list[38].dt_txt +
+            " " +
+            ((Math.round(result.list[38].main.temp - 273) * 9) / 5 + 32) +
+            "°F " +
+            " " +
+            result.list[38].wind.gust +
+            " MPH " +
+            "Humidity " +
+            result.list[38].main.humidity +
+            "%";
+          $("#1fore").text(day1);
+          $("#2fore").text(day2);
+          $("#3fore").text(day3);
+          $("#4fore").text(day4);
+          $("#5fore").text(day5);
+          $("#5daycity").text(result.city.name + "'s 5 day Forecast");
+        });
     });
+});
+
+var inputHistory = (localStorage.inputHistory) ? JSON.parse(localStorage.inputHistory) : [];
+
+searchBtn.addEventListener("click", ()=>{
+    inputHistory.push(userInput.value)
+    localStorage.inputHistory = JSON.stringify(inputHistory)
+
+
+    
+})
+
+// to be changed with for loop
+
+history1.textContent = inputHistory[0]
+history2.textContent = inputHistory[1]
+history3.textContent = inputHistory[2]
+history4.textContent = inputHistory[3]
+history5.textContent = inputHistory[4]
 
 
 
-
-
-
-
-          

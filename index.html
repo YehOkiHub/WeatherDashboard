@@ -1,47 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script
-  src="https://code.jquery.com/jquery-3.6.1.js"
-  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
-  crossorigin="anonymous"></script>
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
     <title>Document</title>
-</head>
-<header>
+  </head>
+  <header>
     <h1 id="header">Weather Dashboard</h1>
-
-</header>
-<body>
+  </header>
+  <body>
     <div>
-    <aside id="aside"> 
-        
+      <aside id="aside">
         <form>
-            <input id="search" type="text" placeholder="Enter city name" />
-            <button id="button-submit" type="submit">search</button>
+          <input id="search" type="text" placeholder="Enter city name" />
+          <button id="button-submit" type="submit">search</button>
         </form>
 
-        <div id="searchhistory" class="hide"  >
-            <h1 class="hide">Search History</h1>
-            <br>
-            <button class="hide" id="history1" type="submit" ></button>
-            <button class="hide" id="history2" type="submit"></button>
-            <button class="hide"id="history3" type="submit"></button>
-            <button class="hide" id="history4" type="submit"></button>
-            <button class="hide" id="history5" type="submit"></button>
-
-
+        <div id="searchhistory" class="hide">
+          <h1 class="hide">Search History</h1>
+          <br />
+          <button class="hide" id="history1" type="submit"></button>
+          <button class="hide" id="history2" type="submit"></button>
+          <button class="hide" id="history3" type="submit"></button>
+          <button class="hide" id="history4" type="submit"></button>
+          <button class="hide" id="history5" type="submit"></button>
         </div>
-     
-        
-    </aside>
+      </aside>
 
-    <main id="mainprofile" class="hide">
+      <main id="mainprofile" class="hide">
         <h2 id="citymain"></h2>
-        
+
         <h3 class="hide">Temp in °F</h3>
         <h3 id="current-temp"></h3>
 
@@ -49,42 +44,25 @@
         <h3 id="current-wind"></h3>
 
         <h3 class="hide">Humidity</h3>
-        <h3 id="current-humidity"></h3>           
+        <h3 id="current-humidity"></h3>
+      </main>
+      <div class="hide">
+        <div class="grid-container">
+          <h2 id="5daycity">5-day Forecast:</h2>
 
-    </main>
-    <div class="hide"> 
-      <div class="grid-container" >
+          <div id="1fore"></div>
 
-        <h2 id="5daycity">5-day Forecast:</h2>
-        
-        <div id="1fore">    
-        </div>     
-        
+          <div id="2fore"></div>
 
-        <div id="2fore" >
+          <div id="3fore"></div>
+
+          <div id="4fore"></div>
+
+          <div id="5fore"></div>
         </div>
-           
+      </div>
 
-
-        <div id="3fore">
-        </div>
-           
-
-
-        <div id="4fore">
-        </div>
-           
-
-        
-        <div id="5fore">
-        </div>
-           
-    
-      </div> 
+      <script src="script.js"></script>
     </div>
-
-    <script src="script.js"></script>
-    </div>
-    
-</body>
+  </body>
 </html>
