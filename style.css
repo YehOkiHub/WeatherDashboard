@@ -10,12 +10,13 @@
 #header {
 
   background: rgba(3, 31, 100, 1.0);
-  background: -webkit-linear-gradient(top left, rgba(3, 31, 100, 1.0), rgba(158, 164, 239, 1.0));
+  background: -webkit-linear-gradient(top left, rgba(3, 31, 100, 1.0), #152238);
   background: -moz-linear-gradient(top left, rgba(3, 31, 100, 1.0), rgba(158, 164, 239, 1.0));
-  background: linear-gradient(to bottom right, rgba(3, 31, 100, 1.0), rgba(158, 164, 239, 1.0));
+  background: linear-gradient(to bottom right, rgba(3, 31, 100, 1.0), #152238);
   color: white;
   text-align: center;  
   font-size: 5vh;
+  margin-right:20vh;
  
 
 }
@@ -37,7 +38,7 @@ label {
     width: 40vh;
     height: 20vh;
     position: fixed;    
-    top: 9%;
+    top: 24%;
     left: 35%;
     text-align: left;
     border: solid black 5px;
@@ -45,6 +46,7 @@ label {
     color: white;
     border-radius: 10px;
     text-align: center;
+    border: 4px double #cccccc;
     
     
 }
@@ -66,7 +68,7 @@ label {
 }
 
 .grid-container {
-    margin-top: 10%;
+    
     display: grid;
     height: 40vh;
     width: 100vh;
@@ -79,6 +81,7 @@ label {
     background-color: #152238;
     color: white;
     border-radius: 10px;
+    border: 4px double #cccccc;
     
   }
 
@@ -97,20 +100,20 @@ label {
 #button-submit {
 
     display: inline-block;
-        background-color:#152238;
-        border-radius: 10px;
-        border: 4px double #cccccc;
-        color: #eeeeee;
-        text-align: center;
-        font-size: 28px;
-        padding: 10px;
-        width: 150px;
-        -webkit-transition: all 0.5s;
-        -moz-transition: all 0.5s;
-        -o-transition: all 0.5s;
-        transition: all 0.5s;
-        cursor: pointer;
-        margin-top: 10vh;
+    background-color:#152238;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 28px;
+    padding: 10px;
+    width: 150px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-top: 10vh;
         
 }
 
@@ -126,3 +129,132 @@ label {
     font-size: 20px;
 
 }
+
+
+#searchhistory {
+
+    font-size: 20px;
+    font-weight: bold;    
+    width: 2%;    
+    margin-left: 2vh;    
+    background-color:#152238;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 28px;
+    padding: 10px;
+    width:30vh;    
+    cursor: pointer;
+    margin-top: 2vh;
+    
+    
+    
+
+}
+
+
+#history1 { 
+
+    
+    background-color:#152238;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size:14px;
+    padding: 10px;
+    width: 150px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-left: 6vh;
+    
+
+
+}
+
+#history2 { 
+
+    
+    background-color:#152238;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size:14px;
+    padding: 10px;
+    width: 150px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-left: 6vh;
+
+
+}
+#history3 { 
+
+    
+    background-color:#152238;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size:14px;
+    padding: 10px;
+    width: 150px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-left: 6vh;
+
+
+}
+#history4 { 
+
+    
+    background-color:#152238;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size:14px;
+    padding: 10px;
+    width: 150px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-left: 6vh;
+
+
+}
+#history5 { 
+
+    
+    background-color:#152238;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size:14px;
+    padding: 10px;
+    width: 150px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-left: 6vh;
+    
+
+
+}
+

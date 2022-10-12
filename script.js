@@ -1,6 +1,12 @@
 var userInput = document.getElementById("search");
 var searchBtn = document.getElementById("button-submit");
 var apiKey = "6a85240e0721490a7cbc7f502516be62";
+var history1 = document.getElementById("history1");
+var history2 = document.getElementById("history1");
+var history3 = document.getElementById("history1");
+var history4 = document.getElementById("history1");
+var history5 = document.getElementById("history1");
+
 
 
 searchBtn.addEventListener("click", function (event){
@@ -13,14 +19,7 @@ searchBtn.addEventListener("click", function (event){
         cities.push(city);
     }
     localStorage.setItem("cities", JSON.stringify(cities));
-
-    
-
-    // $("#searchhistory").text(cities);
-
-
-
-    
+ 
     
 
     fetch(
@@ -60,11 +59,31 @@ searchBtn.addEventListener("click", function (event){
                     $("#5fore").text(day5)
                     $("#5daycity").text(result.city.name +"'s 5 day Forecast")
 
+
+
+// 5 Previous searches
+
+                    $("#history1").text(cities[1]); 
+                    $("#history2").text(cities[2]);
+                    $("#history3").text(cities[3]); 
+                    $("#history4").text(cities[4]); 
+                    $("#history5").text(cities[5]);   
+                    
+                    
                     
                 })
                 .catch((error) => console.log("error", error));
         })
+
+
+
+        
     });
 
 
 
+
+
+
+
+          
