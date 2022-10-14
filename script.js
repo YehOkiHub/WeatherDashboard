@@ -1,22 +1,29 @@
 var userInput = document.getElementById("search");
 var searchBtn = document.getElementById("button-submit");
 var apiKey = "6a85240e0721490a7cbc7f502516be62";
-var history1 = document.getElementById("history1");
-var history2 = document.getElementById("history1");
-var history3 = document.getElementById("history1");
-var history4 = document.getElementById("history1");
-var history5 = document.getElementById("history1");
+
 
 searchBtn.addEventListener("click", function (event) {
   event.preventDefault();
   let city = userInput.value;
 
-  let cities = [city];
-  if (localStorage.getItem("cities")) {
-    cities = JSON.parse(localStorage.getItem("cities"));
-    cities.push(city);
-  }
-  localStorage.setItem("cities", JSON.stringify(cities));
+  setHistory(city)
+  fetchWeatherData(city)
+
+  });
+
+var inputHistory = (localStorage.inputHistory) ? JSON.parse(localStorage.inputHistory) : [];
+
+searchBtn.addEventListener("click", ()=>{
+    inputHistory.push(userInput.value)
+    localStorage.inputHistory = JSON.stringify(inputHistory)
+
+
+    
+})
+
+
+function fetchWeatherData(city){
 
   fetch(
     `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`,
@@ -105,27 +112,110 @@ searchBtn.addEventListener("click", function (event) {
           $("#4fore").text(day4);
           $("#5fore").text(day5);
           $("#5daycity").text(result.city.name + "'s 5 day Forecast");
+
+          showHistory()
         });
     });
-});
-
-var inputHistory = (localStorage.inputHistory) ? JSON.parse(localStorage.inputHistory) : [];
-
-searchBtn.addEventListener("click", ()=>{
-    inputHistory.push(userInput.value)
-    localStorage.inputHistory = JSON.stringify(inputHistory)
 
 
-    
-})
 
+}
 // to be changed with for loop
 
-history1.textContent = inputHistory[0]
-history2.textContent = inputHistory[1]
-history3.textContent = inputHistory[2]
-history4.textContent = inputHistory[3]
-history5.textContent = inputHistory[4]
+// history1.textContent = inputHistory[0]
+// history2.textContent = inputHistory[1]
+// history3.textContent = inputHistory[2]
+// history4.textContent = inputHistory[3]
+// history5.textContent = inputHistory[4]
 
 
+function setHistory(cityname){
 
+  var cities = getHistory()
+  console.log(cities)
+  if (cities == null){
+    cities = []
+    
+  }
+  else{
+    cities = JSON.parse(cities)
+  }
+
+  cities.push(cityname);
+
+  localStorage.setItem("cities", JSON.stringify(cities))
+
+  console.log(cities)
+
+}
+
+function getHistory(){
+  
+
+  return localStorage.getItem("cities")
+  
+}
+
+
+function showHistory(){
+
+  var cities = getHistory()  
+  if (cities == null){
+    cities = []
+    
+  }
+  else{
+    cities = JSON.parse(cities)
+  }
+
+  cities = cities.reverse()
+  for(let i = 0; i < cities.length; i++){
+    var city = cities[i]
+    var historyButton = document.getElementById("history" + (i+1))
+    if(historyButton !== null){
+
+      historyButton.textContent = city
+    }
+
+    
+  }
+
+
+}
+
+
+document.getElementById("history1").addEventListener("click", function(){
+  var cityName = event.target.textContent
+  
+
+  fetchWeatherData(cityName)
+
+})
+document.getElementById("history2").addEventListener("click", function(){
+  var cityName = event.target.textContent
+  
+
+  fetchWeatherData(cityName)
+
+})
+document.getElementById("history3").addEventListener("click", function(){
+  var cityName = event.target.textContent
+  
+
+  fetchWeatherData(cityName)
+
+})
+document.getElementById("history4").addEventListener("click", function(){
+  var cityName = event.target.textContent
+  
+
+  fetchWeatherData(cityName)
+
+})
+document.getElementById("history5").addEventListener("click", function(){
+  var cityName = event.target.textContent
+  
+
+  fetchWeatherData(cityName)
+
+})
