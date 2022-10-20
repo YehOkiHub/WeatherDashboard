@@ -26,7 +26,7 @@ searchBtn.addEventListener("click", ()=>{
 function fetchWeatherData(city){
 
   fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`,
+    `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`,
 
     { method: "GET" }
   )
@@ -35,7 +35,7 @@ function fetchWeatherData(city){
       const lat = result[0].lat;
       const lon = result[0].lon;
 
-      const url = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+      const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
       fetch(url, { method: "GET" })
         .then((response) => response.json())
         .then((result) => {
