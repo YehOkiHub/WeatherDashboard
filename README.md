@@ -14,7 +14,7 @@ CSS
 Javascript
 
 
-![My Image](/WeatherDashboard/images/YtSra8a.png)
+![Picture](/WeatherDashboard/images/YtSra8a.png "Weather")
 
 Github Link : https://yehokihub.github.io/WeatherDashboard/
 
