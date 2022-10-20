@@ -13,6 +13,9 @@ HTML
 CSS
 Javascript
 
+
+![Screenshot](/YtSra8a.png)
+
 Github Link : https://yehokihub.github.io/WeatherDashboard/
 
 
