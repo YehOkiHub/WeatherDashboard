@@ -14,7 +14,7 @@ CSS
 Javascript
 
 
-![Alt text](/WeatherDashboard/images/YtSra8a.png "Optional title")
+![My Image](/WeatherDashboard/images/YtSra8a.png)
 
 Github Link : https://yehokihub.github.io/WeatherDashboard/
 
