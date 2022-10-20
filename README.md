@@ -14,7 +14,7 @@ CSS
 Javascript
 
 
-![Screenshot](/images/YtSra8a.png)
+![Screenshot](/WeatherDashboard/images/YtSra8a.png)
 
 Github Link : https://yehokihub.github.io/WeatherDashboard/
 
