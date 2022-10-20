@@ -72,13 +72,13 @@ label {
 }
 
 .grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(88, 69, 69, 0.377);
   text-align: center;
   padding: 10px;
   font-size: 25px;
   height: 18vh;
   width: 15vh;
-  border: black solid 5px;
+  border: yellow solid 5px;
   align-content: center;
   display: inline-block;
 }
